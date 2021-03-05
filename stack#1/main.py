@@ -44,4 +44,6 @@ while True:
         for x in myStack:
             total = total + x
         print('total in my stack is {}'.format(total))
+        print("Exit Program..")
         break
+    
