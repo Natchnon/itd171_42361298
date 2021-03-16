@@ -1,7 +1,6 @@
 import math
 
 
-
 class Queue:
     def __init__(self):
         self.items = []
@@ -118,6 +117,7 @@ class Graph:
                     nbr.setDistance(currentVertex.getDistance() + 1)
                     nbr.setPred(currentVertex)
                     q.enqueue(nbr)
+                    print('ระยะทางที่สั้นที่สุดจากจุดเริ่มต้นในการท่องไปในกราฟไปยังจุด ', nbr.getId(), ' = ', nbr.getDistance())
         currentVertex.setColor('black')
 
 
@@ -126,7 +126,7 @@ g = Graph()
 
 while True:
     key = input("โปรดระบุชื่อ Vertex : ")
-    if key == ' ':
+    if key == '':
         break
     else:
         g.addVertex(key)
@@ -135,11 +135,11 @@ while True:
 while True:
     print('โปรดระบุเส้นเชื่อมโดยระบุชื่อ Vertex ที่เป็น Sources และ Destination')
     f = input("Source : ")
-    if f == ' ':
+    if f == '':
         break
     else:
         t = input('Destination : ')
-        if t == ' ': 
+        if t == '': 
             break
         else:
             g.addEdge(f,t)
