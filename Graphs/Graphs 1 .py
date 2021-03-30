@@ -89,9 +89,9 @@ class Graph:
 
     def addEdge(self,f,t):
         if f not in self.vertices:
-            nv = self.addVertex(f)
+            n = self.addVertex(f)
         if t not in self.vertices:
-            nv = self.addVertex(t)
+            n = self.addVertex(t)
             self.vertices[f].addNeighbor(self.vertices[t])
 
 
@@ -113,12 +113,13 @@ class Graph:
             currentVertex = q.dequeue()
             for nbr in currentVertex.getConnections():
                 if (nbr.getColor() == 'white'):
+                    print('IF')
                     nbr.setColor('gray')
                     nbr.setDistance(currentVertex.getDistance() + 1)
                     nbr.setPred(currentVertex)
                     q.enqueue(nbr)
                     print('ระยะทางที่สั้นที่สุดจากจุดเริ่มต้นในการท่องไปในกราฟไปยังจุด ', nbr.getId(), ' = ', nbr.getDistance())
-        currentVertex.setColor('black')
+            currentVertex.setColor('black')
 
 
 g = Graph()
