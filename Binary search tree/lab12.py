@@ -50,7 +50,7 @@ n = int(input('โปรดป้อนค่า n เพื่อใช้ใ�
 while len(myList)+1 != n:
     item = int(input('Number = '))
     if item in myList:
-        print('ข้อมูลซ้ำ')
+        print('ข้อมูลซ้ำ\n')
     else:
         myList.append(item)
         bst.insert(item)
